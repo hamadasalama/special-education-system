@@ -1,0 +1,190 @@
+/* ==========================================================================
+   مدارس التطوير العلمي الأهلية - قسم التربية الخاصة
+   نظام الزيارات الصفية والتقييم المهني
+   Design System & Styling Master File
+   مطور الموقع بواسطة: حمادة سلامة
+   ========================================================================== */
+
+:root {
+    --primary-color: #1e3a8a;
+    --primary-light: #eff6ff;
+    --primary-hover: #1e40af;
+    --secondary-color: #0d9488;
+    --secondary-light: #f0fdf4;
+    --accent-color: #d97706;
+    
+    --success-color: #16a34a;
+    --success-light: #f0fdf4;
+    --warning-color: #ca8a04;
+    --warning-light: #fefce8;
+    --danger-color: #dc2626;
+    --danger-light: #fef2f2;
+    --info-color: #2563eb;
+    --info-light: #eff6ff;
+
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #0f172a;
+    --text-muted: #64748b;
+    --border-color: #e2e8f0;
+
+    --radius-sm: 6px;
+    --radius-md: 10px;
+    --radius-lg: 16px;
+    --shadow-sm: 0 1px 3px rgba(0,0,0,0.1);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Cairo', sans-serif;
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    direction: rtl;
+    text-align: right;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Utilities & Helpers */
+.hidden { display: none !important; }
+.text-muted { color: var(--text-muted); }
+.text-danger { color: var(--danger-color); }
+.text-success { color: var(--success-color); }
+.text-warning-dark { color: #854d0e; }
+.margin-top-md { margin-top: 1rem; }
+.margin-top-lg { margin-top: 1.5rem; }
+.margin-bottom-md { margin-bottom: 1rem; }
+.p-0 { padding: 0 !important; }
+.flex-between { display: flex; justify-content: space-between; align-items: center; }
+
+/* Buttons */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.2rem;
+    font-size: 0.95rem;
+    font-weight: 600;
+    border-radius: var(--radius-md);
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.btn-primary { background: var(--primary-color); color: #fff; }
+.btn-primary:hover { background: var(--primary-hover); }
+.btn-secondary { background: #64748b; color: #fff; }
+.btn-success { background: var(--success-color); color: #fff; }
+.btn-warning { background: var(--warning-color); color: #fff; }
+.btn-outline-primary { border-color: var(--primary-color); color: var(--primary-color); background: transparent; }
+.btn-outline-danger { border-color: var(--danger-color); color: var(--danger-color); background: transparent; }
+.btn-block { width: 100%; justify-content: center; }
+.btn-sm { padding: 0.3rem 0.7rem; font-size: 0.85rem; }
+.btn-lg { padding: 0.8rem 1.8rem; font-size: 1.05rem; }
+
+/* Header Navbar */
+.app-header {
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border-color);
+    padding: 0.75rem 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+.header-left { display: flex; align-items: center; gap: 1rem; }
+.school-brand { display: flex; align-items: center; gap: 0.75rem; }
+.brand-icon { font-size: 1.8rem; color: var(--primary-color); }
+.school-brand h2 { font-size: 1.1rem; color: var(--primary-color); font-weight: 700; }
+.school-brand p { font-size: 0.8rem; color: var(--text-muted); }
+
+.header-right { display: flex; align-items: center; gap: 1.25rem; }
+.user-profile-summary { display: flex; align-items: center; gap: 0.5rem; }
+.avatar { width: 38px; height: 38px; border-radius: 50%; background: var(--primary-color); color: #fff; display: flex; align-items: center; justify-content: center; font-weight: 700; }
+.avatar-lg { width: 64px; height: 64px; border-radius: 50%; background: var(--primary-color); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; font-weight: 700; }
+
+/* Main Container Layout */
+.app-container { display: flex; flex: 1; }
+.sidebar { width: 260px; background: var(--bg-card); border-left: 1px solid var(--border-color); padding: 1rem; }
+.sidebar-nav { display: flex; flex-direction: column; gap: 0.5rem; }
+.menu-label { font-size: 0.75rem; font-weight: 700; color: var(--text-muted); text-transform: uppercase; margin: 1rem 0 0.5rem 0; }
+.nav-item { display: flex; align-items: center; gap: 0.75rem; padding: 0.75rem 1rem; color: var(--text-main); text-decoration: none; border-radius: var(--radius-md); font-weight: 600; transition: background 0.2s; }
+.nav-item:hover, .nav-item.active { background: var(--primary-light); color: var(--primary-color); }
+
+.main-content { flex: 1; padding: 1.5rem; overflow-y: auto; }
+
+/* Cards & Tables */
+.card { background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-color); box-shadow: var(--shadow-sm); overflow: hidden; }
+.card-header { padding: 1rem 1.25rem; border-bottom: 1px solid var(--border-color); background: #fafafa; }
+.card-body { padding: 1.25rem; }
+.card-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.5rem; }
+
+.kpi-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+.kpi-card { background: var(--bg-card); border-radius: var(--radius-md); padding: 1.25rem; border: 1px solid var(--border-color); display: flex; align-items: center; gap: 1rem; border-right: 4px solid var(--primary-color); }
+.kpi-icon { width: 50px; height: 50px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; }
+
+.table-responsive { width: 100%; overflow-x: auto; }
+.data-table { width: 100%; border-collapse: collapse; text-align: right; }
+.data-table th, .data-table td { padding: 0.85rem 1rem; border-bottom: 1px solid var(--border-color); }
+.data-table th { background: #f8fafc; font-weight: 700; color: var(--text-muted); font-size: 0.85rem; }
+
+/* Badges */
+.badge { display: inline-block; padding: 0.25rem 0.6rem; border-radius: 20px; font-size: 0.8rem; font-weight: 700; }
+.badge.success { background: var(--success-light); color: var(--success-color); }
+.badge.warning { background: var(--warning-light); color: var(--warning-color); }
+.badge.danger { background: var(--danger-light); color: var(--danger-color); }
+
+/* Forms */
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 1rem; }
+.form-group { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-group.full-width { grid-column: 1 / -1; }
+.form-group label { font-size: 0.9rem; font-weight: 600; }
+.form-control { padding: 0.65rem 0.85rem; border: 1px solid var(--border-color); border-radius: var(--radius-sm); font-size: 0.95rem; outline: none; }
+.form-control:focus { border-color: var(--primary-color); box-shadow: 0 0 0 3px rgba(30, 58, 138, 0.1); }
+
+/* Rubric Accordions */
+.rubric-domain-box { border: 1px solid var(--border-color); border-radius: var(--radius-md); margin-bottom: 1rem; overflow: hidden; }
+.domain-header { background: #f1f5f9; padding: 0.85rem 1.25rem; font-weight: 700; color: var(--primary-color); display: flex; justify-content: space-between; align-items: center; }
+.domain-items-list { padding: 1rem; }
+.rubric-item-row { display: grid; grid-template-columns: 2fr 1fr 2fr; gap: 1rem; align-items: center; padding: 0.75rem 0; border-bottom: 1px dashed var(--border-color); }
+
+/* Login Screen */
+.login-wrapper { min-height: 80vh; display: flex; align-items: center; justify-content: center; }
+.login-card { background: #fff; width: 100%; max-width: 440px; padding: 2.5rem; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); border: 1px solid var(--border-color); text-align: center; }
+.logo-circle { width: 70px; height: 70px; border-radius: 50%; background: var(--primary-light); color: var(--primary-color); font-size: 2rem; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto; }
+.login-demo-credentials { margin-top: 1.5rem; background: #f8fafc; padding: 0.85rem; border-radius: var(--radius-sm); font-size: 0.82rem; text-align: right; border: 1px solid var(--border-color); }
+
+/* Live Score Bar */
+.live-score-bar { position: sticky; bottom: 10px; background: var(--primary-color); color: #fff; padding: 1rem 1.5rem; border-radius: var(--radius-md); display: flex; justify-content: space-around; align-items: center; margin-top: 1.5rem; box-shadow: var(--shadow-lg); }
+
+/* Print Official Document Styling */
+.printable-a4-document { background: #fff; padding: 2.5rem; max-width: 800px; margin: 0 auto; border: 1px solid var(--border-color); font-size: 0.95rem; }
+.report-official-header { display: flex; justify-content: space-between; align-items: center; }
+.report-logo-placeholder { font-size: 2.5rem; color: var(--primary-color); }
+.rep-title { font-size: 1.3rem; margin-top: 0.5rem; color: var(--primary-color); }
+.report-hr { border: 0; border-top: 2px solid var(--primary-color); margin: 1rem 0; }
+.report-meta-table, .report-data-table { width: 100%; border-collapse: collapse; margin-bottom: 1.25rem; }
+.report-meta-table td { padding: 0.5rem; border: 1px solid var(--border-color); background: #fafafa; }
+.report-data-table th, .report-data-table td { border: 1px solid #000; padding: 0.6rem; text-align: right; }
+.report-data-table th { background: #f1f5f9; }
+.report-signatures-block { display: flex; justify-content: space-between; margin-top: 3rem; text-align: center; }
+
+/* Footer */
+.app-footer { background: var(--bg-card); border-top: 1px solid var(--border-color); padding: 1rem; text-align: center; font-size: 0.85rem; color: var(--text-muted); margin-top: auto; }
+.developer-credit span { font-weight: 700; color: var(--primary-color); }
+
+/* Print Stylesheet Overrides */
+@media print {
+    .no-print, .app-header, .sidebar, .app-footer, .btn, .live-score-bar { display: none !important; }
+    body, .main-content, .app-container { background: #fff !important; padding: 0 !important; margin: 0 !important; }
+    .printable-a4-document { border: none !important; box-shadow: none !important; width: 100% !important; max-width: 100% !important; padding: 0 !important; }
+}
